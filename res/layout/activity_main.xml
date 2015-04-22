@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f8ff"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/button_main_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        android:backgroundTintMode="src_over"
+        android:text="사전 불러오기" />
+
+    <Button
+        android:id="@+id/button_main_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        android:text="사전 감추기" />
+
+    <Button
+        android:id="@+id/button_main_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButton"
+        android:text="나가기" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#f0000000"
+        android:textSize="14sp"
+        android:text="\n\n [ 소 개 ] \n\n -클립보드에 복사된 영단어를 웹뷰를 통해 바로 출력합니다. \n\n -언제든지 알림바에서 사전을 불러올 수 있습니다.\n\n -기분전환용 개인 프로젝트라 업데이트는 매우 느릴거라 예상됩니다." />
+
+</LinearLayout>

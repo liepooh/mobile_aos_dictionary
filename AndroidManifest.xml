@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liepooh.dict.main"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+    
+    <!-- ********************* -->
+    <!-- 		 퍼미션 		   -->
+    <!-- ********************* -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/> 
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+
+    <!-- ********************* -->
+    <!-- 		 액티비티 		   -->
+    <!-- ********************* -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
+        
+        <!-- ********************* -->
+        <!-- 		 액티비티 		   -->
+        <!-- ********************* -->
+        
+        <activity
+            android:name="com.liepooh.dict.main.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		
+        <!-- ********************* -->
+        <!-- 		 서비스 		   -->
+        <!-- ********************* -->
+        
+        <service android:name="com.liepooh.dict.main.ShortcutService">
+            <intent-filter>
+				<action  android:name="ShortcutService"/>
+            </intent-filter>
+        </service>
+        
+        <service android:name="com.liepooh.dict.main.NotificationBarService">
+            <intent-filter>
+				<action  android:name="NotificationBarService"/>
+            </intent-filter>
+        </service>
+        
+        <!-- ********************* -->
+        <!-- 		 리시버 		   -->
+        <!-- ********************* -->
+        
+        <receiver android:name="com.liepooh.dict.main.NoticeONBroadCast" >
+            <intent-filter>
+                <action android:name="NoticeONBroadCast" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.liepooh.dict.main.NoticeOFFBroadCast" >
+            <intent-filter>
+                <action android:name="NoticeOFFBroadCast" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.liepooh.dict.main.NoticeCloseBroadCast" >
+            <intent-filter>
+                <action android:name="NoticeCloseBroadCast" />
+            </intent-filter>
+        </receiver>
+        
+    </application>
+</manifest>
