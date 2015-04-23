@@ -3,6 +3,7 @@ package com.liepooh.dict.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -197,6 +198,11 @@ public class MainActivity extends Activity
             case R.id.button_main_close:
             {
                 finish();
+            }break;
+            
+            case R.id.button_main_promotion:
+            {
+            	startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.d4games.fk.main")));
             }break;
         }
     }
